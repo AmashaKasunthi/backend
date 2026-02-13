@@ -220,7 +220,6 @@ public class RoomController {
 }*/
 package com.oceanview.resort.controller;
 
-
 import com.oceanview.resort.model.Room;
 import com.oceanview.resort.service.RoomService;
 import org.springframework.beans.factory.annotation.Autowired;
