@@ -3,8 +3,8 @@ import com.oceanview.resort.model.Customer;
 import com.oceanview.resort.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
+
 
 @RestController
 @RequestMapping("/api/customer")
@@ -21,7 +21,7 @@ public class CustomerController {
 
     @PostMapping("/login")
     public Customer login(@RequestBody Customer c){
-        // ✅ FIXED METHOD NAME
+        //  FIXED METHOD NAME
         return service.login(c.getEmail(), c.getPassword());
     }
 
