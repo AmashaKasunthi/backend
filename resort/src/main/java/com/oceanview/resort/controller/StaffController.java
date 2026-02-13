@@ -1,7 +1,7 @@
 package com.oceanview.resort.controller;
 
-import java.util.List;
 
+import java.util.List;
 import org.springframework.web.bind.annotation.*;
 import com.oceanview.resort.model.Staff;
 import com.oceanview.resort.service.StaffService;
@@ -49,9 +49,8 @@ public class StaffController {
             existing.setStatus(staff.getStatus());
             return service.save(existing);
         }
-        return null; // or throw exception if staff not found
+        return null;
     }
-
     // Delete staff
     @DeleteMapping("/{id}")
     public void delete(@PathVariable int id) {
