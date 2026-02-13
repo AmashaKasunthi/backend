@@ -9,42 +9,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-/*@RestController
-@RequestMapping("/api/admin")
-@CrossOrigin(origins = "http://localhost:5173")
-public class AdminController {
-
-    @Autowired
-    private AdminService adminService;
-
-    // DTO for login request
-    public static class LoginRequest {
-        private String username;
-        private String password;
-
-        public String getUsername() { return username; }
-        public void setUsername(String username) { this.username = username; }
-
-        public String getPassword() { return password; }
-        public void setPassword(String password) { this.password = password; }
-    }
-
-    @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody LoginRequest request) {
-        System.out.println("=== LOGIN API CALLED ===");
-        System.out.println("Username: [" + request.getUsername() + "]");
-        System.out.println("Password: [" + request.getPassword() + "]");
-
-        boolean success = adminService.login(request.getUsername(), request.getPassword());
-        System.out.println("Login result = " + success);
-
-        if (success) {
-            return ResponseEntity.ok("SUCCESS");
-        } else {
-            return ResponseEntity.status(401).body("FAILURE");
-        }
-    }
-}*/
 @RestController
 @RequestMapping("/api/admin")
 @CrossOrigin(origins = "http://localhost:5173")
