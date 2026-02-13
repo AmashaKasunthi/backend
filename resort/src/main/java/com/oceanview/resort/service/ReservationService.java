@@ -7,7 +7,6 @@ import com.oceanview.resort.repository.RoomRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.time.temporal.ChronoUnit;
 import java.util.List;
 
@@ -64,7 +63,7 @@ public class ReservationService {
 
         // Update room availability
         room.setAvailableRooms(room.getAvailableRooms() - 1);
-        // ❗ Do NOT call roomRepository.save(room)
+        //  Do NOT call roomRepository.save(room)
 
         // Save reservation
         return reservationRepository.save(reservation);
@@ -98,7 +97,7 @@ public class ReservationService {
 
         // Restore availability
         room.setAvailableRooms(room.getAvailableRooms() + 1);
-        // ❗ Do NOT call roomRepository.save(room)
+        //  Do NOT call roomRepository.save(room)
 
         reservationRepository.delete(reservation);
     }
@@ -151,7 +150,7 @@ public class ReservationService {
         return reservationRepository.save(existing);
     }
 
-    // ✅ UPDATE STATUS ONLY (FOR APPROVAL)
+    //  UPDATE STATUS ONLY (FOR APPROVAL)
     @Transactional
     public Reservation updateReservationStatus(Long id, String status) {
         Reservation r = reservationRepository.findById(id)
