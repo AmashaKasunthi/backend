@@ -1,6 +1,5 @@
 package com.oceanview.resort.dto;
 
-
 public class AdminLoginRequest {
     private String username;
     private String password;
