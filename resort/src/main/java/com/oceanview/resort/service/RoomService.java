@@ -60,7 +60,6 @@ import com.oceanview.resort.model.Room;
 import com.oceanview.resort.repository.RoomRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service
