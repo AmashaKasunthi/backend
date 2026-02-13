@@ -34,7 +34,7 @@ public class Reservation {
     @Column(name = "room_type")
     private String roomType;
 
-    @Column(name = "check_in", nullable = false)
+    @Column(name = "check_in", nullable = false )
     private LocalDate checkIn;
 
     @Column(name = "check_out", nullable = false)
@@ -47,8 +47,5 @@ public class Reservation {
 
     @Column(name = "status")
     private String status = "PENDING";
-
-
-
 
 }

@@ -18,6 +18,6 @@ public class Room {
     private int totalRooms;
     private int availableRooms;
     private String image;
-    @Column(length = 1000)  // ADD THIS - allows up to 1000 characters
+    @Column(length = 1000)
     private String description;
 }

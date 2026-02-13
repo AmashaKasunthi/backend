@@ -23,6 +23,4 @@ public class Customer {
     private String password;
 
 
-
-
 }
