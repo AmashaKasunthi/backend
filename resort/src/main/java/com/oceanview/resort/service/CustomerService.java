@@ -4,7 +4,6 @@ import com.oceanview.resort.model.Customer;
 import com.oceanview.resort.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service
