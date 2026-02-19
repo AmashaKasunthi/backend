@@ -27,5 +27,17 @@ public class CustomerService {
     public List<Customer> getAllCustomers(){
         return repo.findAll();
     }
+
+    public Customer getCustomerById(Long id){
+        return repo.findById(id).orElse(null);
+    }
+
+    public Customer save(Customer c){
+        return repo.save(c);
+    }
+
+    public void deleteCustomer(Long id){
+        repo.deleteById(id);
+    }
 }
 
