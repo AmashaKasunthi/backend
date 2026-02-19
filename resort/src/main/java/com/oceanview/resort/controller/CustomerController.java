@@ -24,6 +24,32 @@ public class CustomerController {
         //  FIXED METHOD NAME
         return service.login(c.getEmail(), c.getPassword());
     }
+    @PutMapping("/{id}")
+    public Customer updateCustomer(@PathVariable Long id, @RequestBody Customer updatedCustomer) {
+
+        Customer existing = service.getCustomerById(id);
+
+        if (existing != null) {
+            existing.setName(updatedCustomer.getName());
+            existing.setEmail(updatedCustomer.getEmail());
+
+            // update password only if provided
+            if (updatedCustomer.getPassword() != null && !updatedCustomer.getPassword().isEmpty()) {
+                existing.setPassword(updatedCustomer.getPassword());
+            }
+
+            return service.save(existing);
+        }
+
+        return null;
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteCustomer(@PathVariable Long id){
+        service.deleteCustomer(id);
+    }
+
+
 
     @GetMapping
     public List<Customer> getAllCustomers(){
