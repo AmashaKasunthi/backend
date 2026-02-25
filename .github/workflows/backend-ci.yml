@@ -20,23 +20,9 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      # Find the pom.xml automatically
-      - name: Locate pom.xml
-        id: find-pom
-        run: |
-          POM_PATH=$(find . -name "pom.xml" | head -n 1)
-          echo "pom_path=$POM_PATH" >> $GITHUB_OUTPUT
-
       - name: Build with Maven
-        run: mvn -f ${{ steps.find-pom.outputs.pom_path }} clean install -B
+        run: mvn clean install
 
       - name: Run Tests
-        run: mvn -f ${{ steps.find-pom.outputs.pom_path }} test -B
-
-      # Archive the build artifacts (updated to v4)
-      - name: Archive Artifacts
-        if: success()
-        uses: actions/upload-artifact@v4
-        with:
-          name: backend-artifacts
-          path: ${{ steps.find-pom.outputs.pom_path }}/../target/*.jar
+        run: mvn test
+        
