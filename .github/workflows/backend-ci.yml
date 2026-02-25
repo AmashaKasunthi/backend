@@ -24,10 +24,10 @@ jobs:
 
 
       - name: Build with Maven
-        working-directory: ./backend/resort
+        working-directory: ./resort
         run: mvn clean install -DskipTests=false
 
   
       - name: Run Tests
-        working-directory: ./backend/resort
+        working-directory: ./resort
         run: mvn test
