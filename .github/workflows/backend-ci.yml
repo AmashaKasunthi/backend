@@ -22,7 +22,11 @@ jobs:
 
       - name: Build with Maven
         run: mvn clean install
+        working-directory: ./backend   
 
+      - name: Run Tests
+        run: mvn test
+        working-directory: ./backend   
       - name: Run Tests
         run: mvn test
         
