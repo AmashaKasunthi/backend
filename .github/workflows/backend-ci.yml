@@ -33,10 +33,10 @@ jobs:
       - name: Run Tests
         run: mvn -f ${{ steps.find-pom.outputs.pom_path }} test -B
 
-      # Optional: Archive the build artifacts (JAR/WAR)
+      # Archive the build artifacts (updated to v4)
       - name: Archive Artifacts
         if: success()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: backend-artifacts
           path: ${{ steps.find-pom.outputs.pom_path }}/../target/*.jar
